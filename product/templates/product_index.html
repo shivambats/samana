@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h1>Product</h1>
+
+    {{ text_to_be_rendered }}
+
+    <ul>
+    {% for product in list_example %}
+        {% if product != 420 %}
+            <li>{{ forloop.counter }} {{ product }}</li>
+        {% elif product == 420 %}
+            <li>{{ forloop.counter }} {{ product|add:20 }}</li>
+        {% endif %}
+    {% endfor %}
+    </ul>
+
+{% endblock %}
